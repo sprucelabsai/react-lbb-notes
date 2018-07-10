@@ -54,7 +54,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var ImageNote = _styledComponents2.default.img.withConfig({
 	displayName: 'Notes__ImageNote',
-	componentId: 'u119m2-0'
+	componentId: 's98zuge-0'
 })(['width:100%;']);
 
 var Notes = function (_Component) {
@@ -103,7 +103,9 @@ var Notes = function (_Component) {
 							case 0:
 								_context.prev = 0;
 								_context.next = 3;
-								return this.props.actions.notes.get(this.props.user.UserId);
+								return this.props.actions.notes.get({
+									userId: this.props.user.UserId
+								});
 
 							case 3:
 								_ref2 = _context.sent;
@@ -360,7 +362,10 @@ var Notes = function (_Component) {
 								this.setState({ togglingPinned: true });
 								user = this.props.user;
 								_context6.next = 8;
-								return this.props.actions.notes.togglePinned(note, user.UserId);
+								return this.props.actions.notes.togglePinned({
+									note: note,
+									userId: user.UserId
+								});
 
 							case 8:
 								resp = _context6.sent;
@@ -450,7 +455,7 @@ var Notes = function (_Component) {
 												}
 
 												_context8.next = 3;
-												return _this3.togglePinned(note);
+												return _this3.togglePinned({ note: note });
 
 											case 3:
 											case 'end':

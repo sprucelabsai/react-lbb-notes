@@ -1,5 +1,5 @@
 {
-  "name": "react-lbb-notes",
+  "name": "react-lbb",
   "version": "0.1.0",
   "engines": {
     "node": "^8.5.0",
@@ -7,8 +7,8 @@
   },
   "main": "build/Notes.js",
   "scripts": {
-    "build": "babel src -d build",
-    "watch": "babel src --watch --out-dir build",
+    "build": "./node_modules/.bin/babel src -d build",
+    "watch": "./node_modules/.bin/babel src --watch --out-dir build",
     "test": "./node_modules/.bin/jest --coverage",
     "precommit.disabled": "npm run lint",
     "prepush.disabled": "npm run lint && npm run test",

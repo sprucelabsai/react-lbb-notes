@@ -58,9 +58,9 @@ class Notes extends Component {
 	}
 	async refreshNotes() {
 		try {
-			let { notes, pinned } = await this.props.actions.notes.get(
-				this.props.user.UserId
-			)
+			let { notes, pinned } = await this.props.actions.notes.get({
+				userId: this.props.user.UserId
+			})
 
 			await this.setState({
 				pinned: pinned ? [pinned] : [],
@@ -153,7 +153,10 @@ class Notes extends Component {
 			this.setState({ togglingPinned: true })
 			let { user } = this.props
 
-			let resp = await this.props.actions.notes.togglePinned(note, user.UserId)
+			let resp = await this.props.actions.notes.togglePinned({
+				note,
+				userId: user.UserId
+			})
 			if (resp.isPinned) {
 				//TODO: Remove this anti pattern code
 				this.props.user.pinned = resp
@@ -184,7 +187,7 @@ class Notes extends Component {
 					onClick={async e => {
 						// == onDblTouchTap
 						if (isDblTouchTap(e)) {
-							await this.togglePinned(note)
+							await this.togglePinned({ note })
 						}
 					}}
 				>
@@ -353,13 +356,16 @@ Notes.defaultProps = {
 	}
 }
 
-export default sharable({
-	actionsToEvents: {
-		notes: {
-			get: 'little-black-book:get-notes',
-			create: 'little-black-book:create-note',
-			togglePinned: 'little-black-book:toggle-pinned',
-			saveNoteImage: 'little-black-book:add-image',
+export default sharable(
+	{
+		actionsToEvents: {
+			notes: {
+				get: 'little-black-book:get-notes',
+				create: 'little-black-book:create-note',
+				togglePinned: 'little-black-book:toggle-pinned',
+				saveNoteImage: 'little-black-book:add-image'
+			}
 		}
-	}
-},Notes)
+	},
+	Notes
+)
