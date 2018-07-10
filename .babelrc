@@ -1,22 +1,13 @@
 {
-    "env": {
-      "development": {
-        "presets": "next/babel",
-        "plugins": [["babel-plugin-styled-components", {
-          "ssr": true
-        }]]
-      },
-      "production": {
-        "presets": "next/babel",
-        "plugins": [["babel-plugin-styled-components", {
-          "ssr": true
-        }]]
-      },
-      "test": {
-        "presets": [
-          ["env", { "modules": "commonjs" }],
-          "next/babel"
-        ]
-      }
-    }
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "transform-object-rest-spread",
+      ["babel-plugin-styled-components", {
+      "ssr": true
+    }]],
+    "ignore": ["node_modules"]
   }

@@ -1,10 +1,16 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = isDblTouchTap;
 var dblTouchTapMaxDelay = 750;
 var latestTouchTap = {
 	time: 0,
 	target: null
 };
 
-export default function isDblTouchTap(event) {
+function isDblTouchTap(event) {
 	var touchTap = {
 		time: new Date().getTime(),
 		target: event.currentTarget

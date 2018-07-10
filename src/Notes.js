@@ -17,7 +17,8 @@ import {
 	Loader,
 	List,
 	ListItem,
-	SubmitWrapper
+	SubmitWrapper,
+	sharable
 } from 'react-sprucebot'
 
 import isDblTouchTap from './isDblTouchTap'
@@ -28,7 +29,7 @@ const ImageNote = styled.img`
 	width: 100%;
 `
 
-export default class Notes extends Component {
+class Notes extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -341,10 +342,24 @@ Notes.propTypes = {
 	auth: PropTypes.object.isRequired,
 	lang: PropTypes.object.isRequired,
 	actions: PropTypes.object.isRequired,
-	config: PropTypes.object.isRequired,
+	config: PropTypes.object,
 	onSubmit: PropTypes.func.isRequired
 }
 
 Notes.defaultProps = {
-	onSubmit: () => {}
+	onSubmit: () => {},
+	config: {
+		ENABLE_IMAGE_UPLOADS: true
+	}
 }
+
+export default sharable({
+	actionsToEvents: {
+		notes: {
+			get: 'little-black-book:get-notes',
+			create: 'little-black-book:create-note',
+			togglePinned: 'little-black-book:toggle-pinned',
+			saveNoteImage: 'little-black-book:add-image',
+		}
+	}
+},Notes)

@@ -1,10 +1,46 @@
-import _regeneratorRuntime from 'babel-runtime/regenerator';
+'use strict';
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _jsxFileName = 'src/Notes.js';
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
+var _reactSprucebot = require('react-sprucebot');
+
+var _isDblTouchTap = require('./isDblTouchTap');
+
+var _isDblTouchTap2 = _interopRequireDefault(_isDblTouchTap);
+
+var _reactTapEventPlugin = require('react-tap-event-plugin');
+
+var _reactTapEventPlugin2 = _interopRequireDefault(_reactTapEventPlugin);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _lodash = require('lodash');
+
+var _ = _interopRequireWildcard(_lodash);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
@@ -16,17 +52,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
-import PropTypes from 'prop-types';
-import moment from 'moment';
-import { Dialog, Input, Button, Form, Select, BotText, ImageCropper, Tabs, TabPane, SectionHeading, Switch, Loader, List, ListItem, SubmitWrapper } from 'react-sprucebot';
-
-import isDblTouchTap from './isDblTouchTap';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import styled from 'styled-components';
-import * as _ from 'lodash';
-var ImageNote = styled.img.withConfig({
+var ImageNote = _styledComponents2.default.img.withConfig({
 	displayName: 'Notes__ImageNote',
 	componentId: 'u119m2-0'
 })(['width:100%;']);
@@ -68,10 +94,10 @@ var Notes = function (_Component) {
 	_createClass(Notes, [{
 		key: 'refreshNotes',
 		value: function () {
-			var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee() {
+			var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
 				var _ref2, notes, pinned;
 
-				return _regeneratorRuntime.wrap(function _callee$(_context) {
+				return regeneratorRuntime.wrap(function _callee$(_context) {
 					while (1) {
 						switch (_context.prev = _context.next) {
 							case 0:
@@ -124,14 +150,14 @@ var Notes = function (_Component) {
 	}, {
 		key: 'componentWillMount',
 		value: function () {
-			var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee2() {
-				return _regeneratorRuntime.wrap(function _callee2$(_context2) {
+			var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+				return regeneratorRuntime.wrap(function _callee2$(_context2) {
 					while (1) {
 						switch (_context2.prev = _context2.next) {
 							case 0:
 								_context2.prev = 0;
 								_context2.next = 3;
-								return injectTapEventPlugin();
+								return (0, _reactTapEventPlugin2.default)();
 
 							case 3:
 								_context2.next = 7;
@@ -165,8 +191,8 @@ var Notes = function (_Component) {
 	}, {
 		key: 'handleChange',
 		value: function () {
-			var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee3(key, value) {
-				return _regeneratorRuntime.wrap(function _callee3$(_context3) {
+			var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(key, value) {
+				return regeneratorRuntime.wrap(function _callee3$(_context3) {
 					while (1) {
 						switch (_context3.prev = _context3.next) {
 							case 0:
@@ -193,10 +219,10 @@ var Notes = function (_Component) {
 	}, {
 		key: 'resetNoteForm',
 		value: function () {
-			var _ref5 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee4() {
+			var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
 				var _this2 = this;
 
-				return _regeneratorRuntime.wrap(function _callee4$(_context4) {
+				return regeneratorRuntime.wrap(function _callee4$(_context4) {
 					while (1) {
 						switch (_context4.prev = _context4.next) {
 							case 0:
@@ -224,10 +250,10 @@ var Notes = function (_Component) {
 	}, {
 		key: 'handleSubmit',
 		value: function () {
-			var _ref6 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee5(e) {
+			var _ref6 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(e) {
 				var _state$note, isPinned, isPrivate, body, user, resp, prevNotes;
 
-				return _regeneratorRuntime.wrap(function _callee5$(_context5) {
+				return regeneratorRuntime.wrap(function _callee5$(_context5) {
 					while (1) {
 						switch (_context5.prev = _context5.next) {
 							case 0:
@@ -312,9 +338,9 @@ var Notes = function (_Component) {
 	}, {
 		key: 'togglePinned',
 		value: function () {
-			var _ref7 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee6(note) {
+			var _ref7 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6(note) {
 				var user, resp;
-				return _regeneratorRuntime.wrap(function _callee6$(_context6) {
+				return regeneratorRuntime.wrap(function _callee6$(_context6) {
 					while (1) {
 						switch (_context6.prev = _context6.next) {
 							case 0:
@@ -378,8 +404,8 @@ var Notes = function (_Component) {
 	}, {
 		key: 'handlePrivateToggle',
 		value: function () {
-			var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee7(value) {
-				return _regeneratorRuntime.wrap(function _callee7$(_context7) {
+			var _ref8 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7(value) {
+				return regeneratorRuntime.wrap(function _callee7$(_context7) {
 					while (1) {
 						switch (_context7.prev = _context7.next) {
 							case 0:
@@ -408,17 +434,17 @@ var Notes = function (_Component) {
 			var _this3 = this;
 
 			return notes.map(function (note, idx) {
-				return React.createElement(
-					ListItem,
+				return _react2.default.createElement(
+					_reactSprucebot.ListItem,
 					{
 						key: 'item-' + idx,
 						onClick: function () {
-							var _ref9 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee8(e) {
-								return _regeneratorRuntime.wrap(function _callee8$(_context8) {
+							var _ref9 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee8(e) {
+								return regeneratorRuntime.wrap(function _callee8$(_context8) {
 									while (1) {
 										switch (_context8.prev = _context8.next) {
 											case 0:
-												if (!isDblTouchTap(e)) {
+												if (!(0, _isDblTouchTap2.default)(e)) {
 													_context8.next = 3;
 													break;
 												}
@@ -437,34 +463,16 @@ var Notes = function (_Component) {
 							return function (_x6) {
 								return _ref9.apply(this, arguments);
 							};
-						}(),
-						__source: {
-							fileName: _jsxFileName,
-							lineNumber: 181
-						}
+						}()
 					},
-					React.createElement(
-						BotText,
-						{
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 190
-							}
-						},
+					_react2.default.createElement(
+						_reactSprucebot.BotText,
+						null,
 						note.isPinned ? '📌 ' : '',
 						note.isPrivate ? '🤐 ' : '',
-						note.type === 'image' ? React.createElement(ImageNote, { src: note.body, __source: {
-								fileName: _jsxFileName,
-								lineNumber: 194
-							}
-						}) : React.createElement(
+						note.type === 'image' ? _react2.default.createElement(ImageNote, { src: note.body }) : _react2.default.createElement(
 							'strong',
-							{
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 196
-								}
-							},
+							null,
 							note.body
 						),
 						'- ',
@@ -476,8 +484,8 @@ var Notes = function (_Component) {
 	}, {
 		key: 'onTakePhoto',
 		value: function () {
-			var _ref10 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee9() {
-				return _regeneratorRuntime.wrap(function _callee9$(_context9) {
+			var _ref10 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee9() {
+				return regeneratorRuntime.wrap(function _callee9$(_context9) {
 					while (1) {
 						switch (_context9.prev = _context9.next) {
 							case 0:
@@ -502,10 +510,10 @@ var Notes = function (_Component) {
 	}, {
 		key: 'onSaveImageNote',
 		value: function () {
-			var _ref11 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime.mark(function _callee10(base64ImageNote) {
+			var _ref11 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee10(base64ImageNote) {
 				var _state$note2, isPinned, isPrivate, user;
 
-				return _regeneratorRuntime.wrap(function _callee10$(_context10) {
+				return regeneratorRuntime.wrap(function _callee10$(_context10) {
 					while (1) {
 						switch (_context10.prev = _context10.next) {
 							case 0:
@@ -561,16 +569,11 @@ var Notes = function (_Component) {
 			    config = _props.config,
 			    props = _objectWithoutProperties(_props, ['lang', 'auth', 'config']);
 
-			return React.createElement(
+			return _react2.default.createElement(
 				'div',
-				_extends({}, props, {
-					__source: {
-						fileName: _jsxFileName,
-						lineNumber: 237
-					}
-				}),
-				React.createElement(
-					Dialog,
+				props,
+				_react2.default.createElement(
+					_reactSprucebot.Dialog,
 					{
 						show: !!this.state.errorMessage,
 						onTapClose: function onTapClose() {
@@ -578,194 +581,105 @@ var Notes = function (_Component) {
 						},
 						ref: function ref(_ref12) {
 							return _this4.eDialog = _ref12;
-						},
-						__source: {
-							fileName: _jsxFileName,
-							lineNumber: 238
 						}
 					},
-					React.createElement(
+					_react2.default.createElement(
 						'div',
-						{
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 245
-							}
-						},
-						React.createElement(
-							BotText,
-							{
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 246
-								}
-							},
+						null,
+						_react2.default.createElement(
+							_reactSprucebot.BotText,
+							null,
 							this.state.errorMessage
 						),
-						React.createElement(
-							Button,
+						_react2.default.createElement(
+							_reactSprucebot.Button,
 							{
 								primary: true,
 								onClick: function onClick() {
 									_this4.setState({ errorMessage: '' });
 								},
-								type: 'button',
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 247
-								}
+								type: 'button'
 							},
 							lang.getText('errorCloseBtn')
 						)
 					)
 				),
-				!this.state.notesLoading && !this.state.errorMessage && this.state.pinned.length === 0 && this.state.notes.length === 0 && React.createElement(
-					BotText,
-					{
-						__source: {
-							fileName: _jsxFileName,
-							lineNumber: 262
-						}
-					},
+				!this.state.notesLoading && !this.state.errorMessage && this.state.pinned.length === 0 && this.state.notes.length === 0 && _react2.default.createElement(
+					_reactSprucebot.BotText,
+					null,
 					lang.getText('noNotesFound')
 				),
-				this.state.notes && React.createElement(
-					List,
-					{
-						__source: {
-							fileName: _jsxFileName,
-							lineNumber: 266
-						}
-					},
+				this.state.notes && _react2.default.createElement(
+					_reactSprucebot.List,
+					null,
 					this.notesList(this.state.pinned.concat(this.state.notes))
 				),
-				(this.state.notesLoading || this.state.togglingPinned) && React.createElement(Loader, {
-					__source: {
-						fileName: _jsxFileName,
-						lineNumber: 270
-					}
-				}),
-				React.createElement(
-					Form,
+				(this.state.notesLoading || this.state.togglingPinned) && _react2.default.createElement(_reactSprucebot.Loader, null),
+				_react2.default.createElement(
+					_reactSprucebot.Form,
 					{ onSubmit: function onSubmit(e) {
 							return _this4.handleSubmit(e);
-						}, __source: {
-							fileName: _jsxFileName,
-							lineNumber: 272
-						}
-					},
-					React.createElement(
-						List,
-						{
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 273
-							}
-						},
-						!this.state.uploadingImage && React.createElement(
-							ListItem,
-							{
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 275
-								}
-							},
-							React.createElement(
-								SectionHeading,
-								{
-									__source: {
-										fileName: _jsxFileName,
-										lineNumber: 276
-									}
-								},
+						} },
+					_react2.default.createElement(
+						_reactSprucebot.List,
+						null,
+						!this.state.uploadingImage && _react2.default.createElement(
+							_reactSprucebot.ListItem,
+							null,
+							_react2.default.createElement(
+								_reactSprucebot.SectionHeading,
+								null,
 								lang.getText('addTextNote')
 							),
-							React.createElement(Input, {
+							_react2.default.createElement(_reactSprucebot.Input, {
 								multiline: true,
 								placeholder: lang.getText('notePlaceholder'),
 								onChange: function onChange(value, e) {
 									_this4.handleChange('body', value);
 								},
-								value: this.state.note.body,
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 277
-								}
+								value: this.state.note.body
 							})
 						),
-						config.ENABLE_IMAGE_UPLOADS === 'true' && this.state.note.body === '' && React.createElement(
-							ListItem,
-							{ onClick: this.onTakePhoto.bind(this), __source: {
-									fileName: _jsxFileName,
-									lineNumber: 289
-								}
-							},
-							React.createElement(ImageCropper, {
+						config.ENABLE_IMAGE_UPLOADS === 'true' && this.state.note.body === '' && _react2.default.createElement(
+							_reactSprucebot.ListItem,
+							{ onClick: this.onTakePhoto.bind(this) },
+							_react2.default.createElement(_reactSprucebot.ImageCropper, {
 								crop: this.state.crop,
 								uploadButtonText: lang.getText('uploadButtonText'),
-								onSave: this.onSaveImageNote.bind(this),
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 290
-								}
+								onSave: this.onSaveImageNote.bind(this)
 							})
 						),
-						!this.state.note.isPrivate && !this.state.uploadingImage && React.createElement(ListItem, {
+						!this.state.note.isPrivate && !this.state.uploadingImage && _react2.default.createElement(_reactSprucebot.ListItem, {
 							title: lang.getText('pinnedLabel'),
 							subtitle: lang.getText('pinnedSubLabel'),
-							rightInput: React.createElement(Switch, {
+							rightInput: _react2.default.createElement(_reactSprucebot.Switch, {
 								on: this.state.note.isPinned,
 								onChange: function onChange(value) {
 									return _this4.handleChange('isPinned', value);
-								},
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 303
 								}
-							}),
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 299
-							}
+							})
 						}),
-						auth.role === 'owner' && React.createElement(ListItem, {
+						auth.role === 'owner' && _react2.default.createElement(_reactSprucebot.ListItem, {
 							title: lang.getText('privateLabel'),
 							subtitle: lang.getText('privateSubLabel'),
-							rightInput: React.createElement(Switch, {
+							rightInput: _react2.default.createElement(_reactSprucebot.Switch, {
 								on: this.state.note.isPrivate,
 								onChange: function onChange(value) {
 									return _this4.handlePrivateToggle(value);
-								},
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 315
 								}
-							}),
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 311
-							}
+							})
 						})
 					),
-					React.createElement(
-						SubmitWrapper,
-						{
-							__source: {
-								fileName: _jsxFileName,
-								lineNumber: 323
-							}
-						},
-						React.createElement(
-							Button,
+					_react2.default.createElement(
+						_reactSprucebot.SubmitWrapper,
+						null,
+						_react2.default.createElement(
+							_reactSprucebot.Button,
 							{
 								primary: true,
 								busy: this.state.creating,
 								disabled: !this.state.note.body,
-								type: 'submit',
-								__source: {
-									fileName: _jsxFileName,
-									lineNumber: 324
-								}
+								type: 'submit'
 							},
 							lang.getText('saveNote')
 						)
@@ -776,20 +690,31 @@ var Notes = function (_Component) {
 	}]);
 
 	return Notes;
-}(Component);
-
-export default Notes;
-
+}(_react.Component);
 
 Notes.propTypes = {
-	user: PropTypes.object.isRequired, // user we are editing
-	auth: PropTypes.object.isRequired,
-	lang: PropTypes.object.isRequired,
-	actions: PropTypes.object.isRequired,
-	config: PropTypes.object.isRequired,
-	onSubmit: PropTypes.func.isRequired
+	user: _propTypes2.default.object.isRequired, // user we are editing
+	auth: _propTypes2.default.object.isRequired,
+	lang: _propTypes2.default.object.isRequired,
+	actions: _propTypes2.default.object.isRequired,
+	config: _propTypes2.default.object,
+	onSubmit: _propTypes2.default.func.isRequired
 };
 
 Notes.defaultProps = {
-	onSubmit: function onSubmit() {}
+	onSubmit: function onSubmit() {},
+	config: {
+		ENABLE_IMAGE_UPLOADS: true
+	}
 };
+
+exports.default = (0, _reactSprucebot.sharable)({
+	actionsToEvents: {
+		notes: {
+			get: 'little-black-book:get-notes',
+			create: 'little-black-book:create-note',
+			togglePinned: 'little-black-book:toggle-pinned',
+			saveNoteImage: 'little-black-book:add-image'
+		}
+	}
+}, Notes);
